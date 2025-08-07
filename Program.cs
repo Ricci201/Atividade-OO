@@ -185,5 +185,38 @@ internal class Program
 
         capivara.Exibir();
         capivara.EmitirSom();
+
+        Console.WriteLine("--------------------------------------------------");
+
+        ContaGenerica conta1 = new ContaGenerica("Banco do Brasil", "001", "12345-6", 1000);
+        ContaGenerica conta2 = new ContaGenerica("Caixa Econômica", "002", "65432-1", 500);
+        ContaGenerica conta3 = new ContaGenerica("Santander", "003", "78901-2", 1500);
+        ContaCorrente conta4 = new ContaCorrente("Batata", "004", "34567-8", 2000, 500);
+
+        conta1.Exibir();
+        conta1.Depositar(200);
+        conta1.Sacar(300);
+        Console.WriteLine($"Saldo após saque: {conta1.Saldo:C}");
+
+        Console.WriteLine("--------------------------------------------------");
+
+        conta2.Exibir();
+        conta2.Depositar(100);
+        conta2.Sacar(600);
+        Console.WriteLine($"Saldo após saque: {conta2.Saldo:C}");
+
+        Console.WriteLine("--------------------------------------------------");
+
+        conta3.Exibir();
+        conta3.Depositar(300);
+        conta3.Sacar(1000);
+        Console.WriteLine($"Saldo após saque: {conta3.Saldo:C}");
+
+        Console.WriteLine("--------------------------------------------------");
+
+        conta4.Exibir();
+        conta4.Depositar(1000);
+        conta4.Sacar(1500);
+        Console.WriteLine($"Saldo após saque: {conta4.Saldo:C}");
     }
 }

@@ -191,7 +191,7 @@ internal class Program
         ContaGenerica conta1 = new ContaGenerica("Banco do Brasil", "001", "12345-6", 1000);
         ContaGenerica conta2 = new ContaGenerica("Caixa Econômica", "002", "65432-1", 500);
         ContaGenerica conta3 = new ContaGenerica("Santander", "003", "78901-2", 1500);
-        ContaCorrente conta4 = new ContaCorrente("Batata", "004", "34567-8", 2000, 500);
+        ContaCorrente conta4 = new ContaCorrente("Banco do Batata", "010", "6970-4", 900, 1000);
 
         conta1.Exibir();
         conta1.Depositar(200);
@@ -215,8 +215,20 @@ internal class Program
         Console.WriteLine("--------------------------------------------------");
 
         conta4.Exibir();
-        conta4.Depositar(1000);
-        conta4.Sacar(1500);
+        conta4.Depositar(900);
+        conta4.Sacar(1900);
         Console.WriteLine($"Saldo após saque: {conta4.Saldo:C}");
+
+        Console.WriteLine("--------------------------------------------------");
+
+        Personagens personagem1 = new Personagens("Arthas", "Guerreiro", 5, 18, 10, 6, 120);
+        Personagens personagem2 = new Personagens("Lyra", "Arqueira", 4, 12, 18, 8, 90);
+        Personagens personagem3 = new Personagens("Kael", "Mago", 6, 6, 9, 20, 80);
+
+        personagem1.ExibirStatus();
+        Console.WriteLine("---------------------------------");
+        personagem2.ExibirStatus();
+        Console.WriteLine("---------------------------------");
+        personagem3.ExibirStatus();
     }
 }
